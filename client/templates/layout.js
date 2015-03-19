@@ -1,5 +1,5 @@
 Template.layout.helpers({
-	days: {
+	day: {
 		records: [{ 
 				hour: 9, 
 				minute: 0,

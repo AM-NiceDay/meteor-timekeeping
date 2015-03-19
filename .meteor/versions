@@ -40,6 +40,7 @@ routepolicy@1.0.5-rc.0
 session@1.1.0-rc.0
 spacebars@1.0.6-rc.0
 spacebars-compiler@1.0.5-rc.0
+stevezhu:lodash@3.5.0
 templating@1.1.0-win.0
 tracker@1.0.6-win.0
 ui@1.0.6-rc.0

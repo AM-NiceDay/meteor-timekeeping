@@ -1,24 +1,6 @@
 <template name="layout">
-	<table>
-		<thead>
-			<tr>
-				<th>Tag</th>
-				<th>Description</th>
-				<th>Time</th>
-			</tr>
-		</thead>
-		<tbody>
-			{{#each days.records}}
-				{{> record}}
-			{{/each}}
-		</tbody>
-	</table>
+	{{> timetable day}}
+	{{> chart day}}
 </template>
 
-<template name="record">
-	<tr>
-		<td>{{tag}}</td>
-		<td>{{description}}</td>
-		<td>{{hour}}:{{minute}}</td>
-	</tr>
-</template>
+
