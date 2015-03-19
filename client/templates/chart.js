@@ -1,5 +1,6 @@
 Template.chart.rendered = function() {
 
+	var day = this.data;
 	var records = this.data.records;
 
 	var data = [];
@@ -7,7 +8,7 @@ Template.chart.rendered = function() {
 
 	_.forEach(records, function(record, index) {
 		if (index == records.length - 1) {
-			var duration = getDuration(record, {hour: 18, minute: 0});
+			var duration = getDuration(record, day.end);
 		} else {
 			var duration = getDuration(record, records[index + 1]);
 		}
