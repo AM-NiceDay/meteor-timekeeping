@@ -1,4 +1,7 @@
 <template name="layout">
+	{{#each arrayify days}}
+		{{> daysList}}
+	{{/each}}
 	{{> timetable day}}
 	{{> chart day}}
 </template>

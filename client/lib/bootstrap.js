@@ -1,7 +1,6 @@
-Days = [ 
-	{
+Days = { 
+	'2015-02-24': {
 		// 02.19.2015
-		date: '2015-02-24',
 		start: {
 			hour: 9,
 			minute: 0
@@ -28,9 +27,8 @@ Days = [
 			{hour: 17, minute: 40, tag: 'work', description: 'Personalization'}
 		]
 	},
-	{
+	'2015-02-25': {
 		// 02.24.2015
-		date: '2015-02-24',
 		start: {
 			hour: 9,
 			minute: 55
@@ -55,4 +53,4 @@ Days = [
 			{hour: 16, minute: 00, tag: 'work', description: 'Personalization'}
 		]
 	}
-];
+};
