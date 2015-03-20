@@ -2,8 +2,7 @@
 	{{#each arrayify days}}
 		{{> daysList}}
 	{{/each}}
-	{{> timetable day}}
-	{{> chart day}}
+	{{> yield}}
 </template>
 
 
