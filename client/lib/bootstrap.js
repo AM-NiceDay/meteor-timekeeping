@@ -41,7 +41,7 @@ Days = {
 			{hour: 9, minute: 55, tag: 'work', description: 'Mail and Jira'}, 
 			{hour: 10, minute: 15, tag: 'projects', description: 'Spring-tk'}, 
 			{hour: 10, minute: 45, tag: 'work', description: 'Personalization'}, 
-			{hour: 11, minute: 00, tag: 'work', description: 'Scrum meeting'}, 
+			{hour: 11, minute: 0, tag: 'work', description: 'Scrum meeting'}, 
 			{hour: 11, minute: 15, tag: 'break', description: 'Short break'}, 
 			{hour: 11, minute: 20, tag: 'work', description: 'Personalization'}, 
 			{hour: 11, minute: 25, tag: 'projects', description: 'Spring-tk'}, 

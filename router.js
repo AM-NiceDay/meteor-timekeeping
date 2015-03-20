@@ -7,6 +7,6 @@ Router.route('/', function() {
 });
 
 Router.route('/:day', function() {
-	Session.set('day', this.params.day)
+	Session.set('day', this.params.day);
 	this.render('day');
 });
