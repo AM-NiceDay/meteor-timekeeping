@@ -8,5 +8,6 @@ Router.route('/', function() {
 
 Router.route('/:day', function() {
 	Session.set('day', this.params.day);
+	console.log('Set Session day to ' + this.params.day);
 	this.render('day');
 });
