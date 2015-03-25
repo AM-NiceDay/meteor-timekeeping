@@ -5,7 +5,6 @@ Template.layout.helpers({
 		for (var key in obj) {
 			result.push({key: key, value: obj[key]});
 		}
-		//console.log(result);
 		return result;
 	}
 });
