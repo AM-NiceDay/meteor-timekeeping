@@ -1,12 +1,22 @@
 Router.configure({
-	layoutTemplate: 'layout'
+	layoutTemplate: 'layout',
+	waitOn: function() {
+		return Meteor.subscribe('dates');
+	}
 });
 
 Router.route('/', function() {
 	this.render('home');
 });
 
-Router.route('/:day', function() {
-	Session.set('day', this.params.day);
-	this.render('day');
+Router.route('/:date', {
+	waitOn: function() {
+		return Meteor.subscribe('day', this.params.date);
+	},
+	
+	action: function() {
+		this.wait();
+		Session.set('date', this.params.date);
+		this.render('day');
+	}
 });

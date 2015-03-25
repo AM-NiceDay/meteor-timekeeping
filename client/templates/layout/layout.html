@@ -1,13 +1,13 @@
 <template name="layout">
 	<a href="/">Welcome</a>
-	{{#each arrayify days}}
+	{{#each days}}
 		{{> daysList}}
 	{{/each}}
 	{{> yield}}
 </template>
 
 <template name="daysList">
-	<a href="/{{key}}">{{key}}</a>
+	<a href="/{{date}}">{{date}}</a>
 </template>
 
 

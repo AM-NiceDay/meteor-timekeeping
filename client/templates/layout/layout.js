@@ -1,10 +1,5 @@
 Template.layout.helpers({
-	days: Days,
-	arrayify: function(obj) {
-		result = [];
-		for (var key in obj) {
-			result.push({key: key, value: obj[key]});
-		}
-		return result;
+	days: function() {
+		return Days.find().fetch();
 	}
 });
