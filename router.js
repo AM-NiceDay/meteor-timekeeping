@@ -5,8 +5,15 @@ Router.configure({
 	}
 });
 
-Router.route('/', function() {
-	this.render('home');
+Router.route('/', {
+	waitOn: function() {
+		return Meteor.subscribe('day', moment().format('YYYY-MM-DD'));
+	},
+	
+	action: function() {
+		Session.set('date', moment().format('YYYY-MM-DD'));
+		this.render('day');
+	}
 });
 
 Router.route('/:date', {
@@ -15,7 +22,6 @@ Router.route('/:date', {
 	},
 	
 	action: function() {
-		this.wait();
 		Session.set('date', this.params.date);
 		this.render('day');
 	}
