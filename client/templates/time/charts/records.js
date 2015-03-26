@@ -18,7 +18,15 @@ Day.prototype.toPieChartData = function() {
 
 	lodash.forEach(records, function(record, index) {
 		if (index == records.length - 1) {
-			var duration = _this.getDuration(record, _this.day.end);
+			if (_this.day.end == undefined) {
+				var end = {
+					hour: moment().hour(),
+					minute: moment().minute()
+				}
+			} else {
+				var end = _this.day.end;
+			}
+			var duration = _this.getDuration(record, end);
 		} else {
 			var duration = _this.getDuration(record, records[index + 1]);
 		}
