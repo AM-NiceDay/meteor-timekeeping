@@ -1,4 +1,33 @@
-<template name="day">
-	{{> timetable records}}
-	{{> chart pieChart day}}
+<template name="day">	
+	<div class="row">
+		<div class="col s12 m8 l6">
+			{{> timetable records}}
+		</div>
+		<div class="col s6 m4 l3">
+			<div class="card">
+				<div class="card-header">
+					<h5>Current activity</h5>
+				</div>
+        <div class="card-image">
+					{{> chart pieChart day}}
+        </div>
+        <div class="card-content chart-legend">
+          Here will be chart legend
+        </div>
+      </div>
+		</div>
+		<div class="col s6 m4 l3">
+      <div class="card">
+				<div class="card-header">
+					<h5>Radar Chart</h5>
+				</div>
+        <div class="card-image">
+					{{> chart polarAreaChart day}}
+        </div>
+        <div class="card-content chart-legend">
+          Here will be chart legend
+        </div>
+      </div>
+		</div>
+	</div>
 </template>
