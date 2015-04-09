@@ -3,9 +3,11 @@ Day = function(day) {
 };
 
 Day.prototype.getDuration = function(start, end) {
-	var hoursDifference = end.hour - start.hour;
-	var minuteDifference = end.minute - start.minute;
+	var startTime = moment(start.time, "HH:mm");
+	var endTime = moment(end.time, "HH:mm");
 
+	var hoursDifference = endTime.hour() - startTime.hour();
+	var minuteDifference = endTime.minute() - startTime.minute();
 	return hoursDifference * 60 + minuteDifference;
 }
 
@@ -20,11 +22,12 @@ Day.prototype.toPieChartData = function() {
 		if (index == records.length - 1) {
 			if (_this.day.end == undefined) {
 				var end = {
-					hour: moment().hour(),
-					minute: moment().minute()
+					time: moment().format("HH:mm")
 				}
 			} else {
-				var end = _this.day.end;
+				var end = {
+					time: _this.day.end
+				}
 			}
 			var duration = _this.getDuration(record, end);
 		} else {
@@ -32,16 +35,16 @@ Day.prototype.toPieChartData = function() {
 		}
 
 		duration = (duration / 60).toFixed(2) / 1;
-		if (lodash.findIndex(data, {label: record.tag}) == -1) {
+		if (lodash.findIndex(data, {label: record.project}) == -1) {
 			var colorPair = colorFactory.getColorPair();
 			data.push({
 				value: duration,
 				color: colorPair.color,
 				highlight: colorPair.highlight,
-				label: record.tag
+				label: record.project
 			})
 		} else {
-			var index = lodash.findIndex(data, {label: record.tag});
+			var index = lodash.findIndex(data, {label: record.project});
 			data[index].value += duration;
 		}
 	});
