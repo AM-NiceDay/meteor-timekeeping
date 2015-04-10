@@ -19,5 +19,20 @@ Template.addRecordForm.events({
 				form.project.value = "";
 			}
 		});
+	},
+
+	"click #end": function(e, template) {
+		e.preventDefault();
+		var $time = $('#time');
+
+		var id = Days.findOne({ date: Session.get('date') })._id;
+
+		Days.update(id , { $set: { end: $time.val() } }, function(error) {
+			if (error) {
+				console.log(error.reason);
+			} else {
+				$time.val("");
+			}
+		});
 	}
 })

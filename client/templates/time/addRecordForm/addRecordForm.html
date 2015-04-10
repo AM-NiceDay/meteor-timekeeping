@@ -1,5 +1,5 @@
 <template name="addRecordForm">
-  <form>
+  <form id="add-record-form">
     <div class="input-field col s1">
       <input id="time" type="text" class="validate">
       <label for="time">Time</label>
@@ -8,12 +8,15 @@
       <input id="task" type="text" class="validate">
       <label for="task">Task</label>
     </div>
-    <div class="input-field col s3">
+    <div class="input-field col s2">
       <input id="project" type="text" class="validate">
       <label for="project">Project</label>
     </div>
     <div class="input-field col s2">
     	<button class="btn-large col s12" type="submit">Add record</button>
+    </div>
+    <div class="input-field col s1">
+    	<div id="end" class="btn-large col s12">End day</div>
     </div>
   </form>
 </template>
