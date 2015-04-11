@@ -1,3 +1,13 @@
+var timer = new ReactiveTimer();
+timer.start(0.5);
+
+Template.addRecordForm.helpers({
+	currentTime: function() {
+		timer.tick();
+		return moment().format("HH:mm");
+	}
+});
+
 Template.addRecordForm.events({
 	"submit form": function(e, template) {
 		e.preventDefault();
@@ -35,4 +45,4 @@ Template.addRecordForm.events({
 			}
 		});
 	}
-})
+});
