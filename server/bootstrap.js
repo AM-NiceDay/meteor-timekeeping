@@ -9,11 +9,11 @@ BootstrapDays = [
 			{time: "11:00", project: 'work', task: 'Scrum meetion'}, 
 			{time: "11:10", project: 'break', task: 'Short break'}, 
 			{time: "11:20", project: 'work', task: 'Personalization'}, 
+			/*
 			{time: "12:20", project: 'work', task: 'Scrum meetion'}, 
 			{time: "12:55", project: 'java', task: 'Spring'}, 
 			{time: "13:35", project: 'break', task: 'Long break'}, 
 			{time: "14:20", project: 'java', task: 'Spring'}, 
-			/*
 			{time: "14:40", project: 'work', task: 'Personalization'}, 
 			{time: "15:35", project: 'break', task: 'Short break'}, 
 			{time: "15:40", project: 'java', task: 'Spring'}, 
