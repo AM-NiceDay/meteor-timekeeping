@@ -24,7 +24,7 @@ getCurrentRecord = function() {
 
 	if (day && date == now.format('YYYY-MM-DD') && !day.end) {
 		var filteredRecords = lodash.filter(day.records, function(record) {
-			return record.time < now.format('HH:mm');
+			return record.time <= now.format('HH:mm');
 		});
 
 		var sortedRecords = lodash.sortBy(filteredRecords, function(record) {

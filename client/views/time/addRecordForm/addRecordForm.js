@@ -25,7 +25,7 @@ Template.addRecordForm.events({
 			if (error) {
 				console.log(error.reason);
 			} else {
-				form.time.value = "";
+				form.time.value = moment().format("HH:mm");
 				form.task.value = "";
 				form.project.value = "";
 			}
