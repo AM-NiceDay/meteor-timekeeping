@@ -8,6 +8,13 @@ Template.header.rendered = function() {
 Template.header.helpers({
   dates: function() {
     return Days.find({}, { date: 1 }).fetch();
+  },
+
+  endTime: function() {
+    var day = Days.findOne({ date: Session.get('date')}, { fields: { end: 1 } });
+    if (day) {
+      return day.end;
+    }
   }
 });
 

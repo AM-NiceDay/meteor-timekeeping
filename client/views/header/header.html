@@ -7,6 +7,9 @@
 
 			<!-- Desctop -->
 	    <ul class="right hide-on-med-and-down">
+	    	{{#if endTime}}
+	      	<li class="active"><a href="#">End: {{endTime}}</a></li>
+	    	{{/if}}
 	    	{{#if currentRecord}}
 	      	<li class="active"><a href="#">{{currentRecord.task}} ({{currentRecord.project}}) {{currentRecordTime}}</a></li>
 	    	{{/if}}
@@ -22,6 +25,9 @@
 
 			<!-- Mobile --> 
 	    <ul class="side-nav" id="mobile-demo">
+		    {{#if endTime}}
+	      	<li class="active"><a href="#">End: {{endTime}}</a></li>
+	    	{{/if}}
 	    	{{#if currentRecord}}
 		      <li><a href="#">{{currentRecord.task}} ({{currentRecord.project}})</a></li>
 		      <li><a href="#">{{currentRecordTime}}</a></li>
