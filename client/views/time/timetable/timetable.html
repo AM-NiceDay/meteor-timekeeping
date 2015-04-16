@@ -8,7 +8,7 @@
 			</tr>
 		</thead>
 		<tbody>
-			{{#each this}}
+			{{#each reversedRecords}}
 				{{> record}}
 			{{/each}}
 		</tbody>
@@ -16,7 +16,7 @@
 </template>
 
 <template name="record">
-	<tr> 
+	<tr id="{{#if isCurrentRecord}}current{{/if}}">
 		<td>{{task}}</td>
 		<td>{{project}}</td>
 		<td>{{time}}</td>

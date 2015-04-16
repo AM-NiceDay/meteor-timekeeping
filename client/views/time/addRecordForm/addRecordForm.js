@@ -12,6 +12,7 @@ Template.addRecordForm.events({
 	"submit form": function(e, template) {
 		e.preventDefault();
 		var form = e.target;
+
 		var record = {
 			time: form.time.value,
 			task: form.task.value,
@@ -40,8 +41,6 @@ Template.addRecordForm.events({
 		Days.update(id , { $set: { end: $time.val() } }, function(error) {
 			if (error) {
 				console.log(error.reason);
-			} else {
-				$time.val("");
 			}
 		});
 	}

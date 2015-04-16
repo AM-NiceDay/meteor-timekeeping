@@ -1,13 +1,17 @@
 <template name="day">	
 
+	<!-- Add record form -->
 	<div class="row">
 		{{> addRecordForm}}
 	</div>
 
 	<div class="row">
+		<!-- Timetable -->
 		<div class="col s12 m8 l6">
 			{{> timetable records}}
 		</div>
+
+		<!-- Pie chart -->
 		<div class="col s6 m4 l3">
 			<div class="card">
 				<div class="card-header">
@@ -21,6 +25,8 @@
         </div>
       </div>
 		</div>
+
+		<!-- Pie chart -->
 		<div class="col s6 m4 l3">
       <div class="card">
 				<div class="card-header">

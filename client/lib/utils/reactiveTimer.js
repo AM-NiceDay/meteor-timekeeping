@@ -22,5 +22,6 @@ ReactiveTimer = (function() {
 	}
 
 	return ReactiveTimer;
+	
 })();
 

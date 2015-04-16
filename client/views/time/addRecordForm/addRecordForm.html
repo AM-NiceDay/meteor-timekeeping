@@ -1,22 +1,33 @@
 <template name="addRecordForm">
   <form id="add-record-form">
+
+    <!-- Time -->
     <div class="input-field col s3 l1">
       <input value="{{currentTime}}" id="time" type="text" class="validate">
       <label for="time" class="active">Time</label>
     </div>
+
+    <!-- Task -->
     <div class="input-field col s9 l6">
       <input id="task" type="text" class="validate">
       <label for="task">Task</label>
     </div>
+
+    <!-- Project -->
     <div class="input-field col s4 l2">
       <input id="project" type="text" class="validate">
       <label for="project">Project</label>
     </div>
+
+    <!-- Add record -->
     <div class="input-field col s4 l2">
     	<button class="btn-large col s12" type="submit">Add record</button>
     </div>
+
+    <!-- End day -->
     <div class="input-field col s4 l1">
     	<div id="end" class="btn-large col s12">End day</div>
     </div>
+    
   </form>
 </template>

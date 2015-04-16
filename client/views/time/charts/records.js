@@ -3,8 +3,8 @@ Day = function(day) {
 };
 
 Day.prototype.getDuration = function(start, end) {
-	var startTime = moment(start.time, "HH:mm");
-	var endTime = moment(end.time, "HH:mm");
+	var startTime = moment(start, 'HH:mm');
+	var endTime = moment(end, 'HH:mm');
 
 	var hoursDifference = endTime.hour() - startTime.hour();
 	var minuteDifference = endTime.minute() - startTime.minute();
@@ -18,23 +18,23 @@ Day.prototype.toPieChartData = function() {
 	var records = this.day.records;
 	var _this = this;
 
+	records = lodash.sortBy(records, function(record) {
+    return record.time;
+	});	
+
 	lodash.forEach(records, function(record, index) {
 		if (index == records.length - 1) {
 			if (_this.day.end == undefined) {
-				var end = {
-					time: moment().format("HH:mm")
-				}
+				var end = moment().format('HH:mm');
 			} else {
-				var end = {
-					time: _this.day.end
-				}
+				var end = _this.day.end;
 			}
-			var duration = _this.getDuration(record, end);
+			var duration = _this.getDuration(record.time, end);
 		} else {
-			var duration = _this.getDuration(record, records[index + 1]);
+			var duration = _this.getDuration(record.time, records[index + 1].time);
 		}
 
-		duration = (duration / 60).toFixed(2) / 1;
+		
 		if (lodash.findIndex(data, {label: record.project}) == -1) {
 			var colorPair = colorFactory.getColorPair();
 			data.push({
@@ -49,5 +49,13 @@ Day.prototype.toPieChartData = function() {
 		}
 	});
 
-	return data;
+	lodash.forEach(data, function(item) {
+		item.value = (item.value / 60).toFixed(2) / 1;
+	});
+
+	var sortedData = lodash.sortBy(data, function(item) {
+		return item.value;
+	}).reverse();
+
+	return sortedData;
 }

@@ -1,17 +1,17 @@
-Template.layout.rendered = function() {
+Template.header.rendered = function() {
 	 $(".button-collapse").sideNav();
 	 $('.collapsible').collapsible({
       accordion : false
     });
 }
 
-Template.layout.helpers({
-	days: function() {
-		return Days.find().fetch();
-	}
+Template.header.helpers({
+  dates: function() {
+    return Days.find({}, { date: 1 }).fetch();
+  }
 });
 
-Template.daysList.rendered = function() {
+Template.datesList.rendered = function() {
 	$(".dropdown-button").dropdown({
       inDuration: 300,
       outDuration: 225,
